@@ -1,29 +1,75 @@
-var roll_btn=document.getElementById("roll_btn")
-roll_btn.addEventListener("click",function(e){
+var num=document.querySelectorAll(".drum").length
 
+for(var i=0;i<num;i++){
+    document.querySelectorAll(".drum")[i].addEventListener("click",function(){
+        var btn=this.innerHTML
 
-var randomno1=Math.floor(Math.random()*6)+1
-var randomimg1="dice"+randomno1+".png"
-// console.log(randomno1)
-// console.log(randomimg1)
-var img1=document.getElementById("img1")
-img1.setAttribute("src",randomimg1)
+        switch (btn){
+            case 'w':var audio=new Audio("tom-1.mp3")
+            audio.play();
+            console.log("w")
+            break;
+            case 'a':var audio=new Audio("tom-2.mp3")
+            audio.play();
+            console.log("a")
+            break;
+            case 's':var audio=new Audio("tom-3.mp3")
+            audio.play();
+            console.log("s")
+            break;
+            case 'd':var audio=new Audio("tom-4.mp3")
+            audio.play();
+            console.log("d")
+            break;
+            case 'j':var audio=new Audio("snare.mp3")
+            audio.play();
+            console.log("j")
+            break;
+            case 'k':var audio=new Audio("crash.mp3")
+            audio.play();
+            console.log("k")
+            break;
+            case 'l':var audio=new Audio("kick-bass.mp3")
+            audio.play();
+            console.log("l")
+            break;
+        }
+        
+    })
+}
 
-
-var randomno2=Math.floor(Math.random()*6)+1
-var randomimg2="dice"+randomno2+".png"
-var img2=document.getElementById("img2")
-img2.setAttribute("src",randomimg2)
-
-
-var respointer=document.getElementById("res")
-if(randomno1>randomno2)
-respointer.innerHTML="Player 1 Won"
-
-else if(randomno2>randomno1)
-respointer.innerHTML="Player 2 Won"
-
-else
-respointer.innerHTML="Draw"
-
+document.addEventListener("keypress",function (e) {
+    var key=e.key
+    switch (key){
+        case 'w':var audio=new Audio("sounds/tom-1.mp3")
+        audio.play();
+        console.log("w")
+        break;
+        case 'a':var audio=new Audio("sounds/tom-2.mp3")
+        audio.play();
+        console.log("a")
+        break;
+        case 's':var audio=new Audio("sounds/tom-3.mp3")
+        audio.play();
+        console.log("s")
+        break;
+        case 'd':var audio=new Audio("sounds/tom-4.mp3")
+        audio.play();
+        console.log("d")
+        break;
+        case 'j':var audio=new Audio("sounds/snare.mp3")
+        audio.play();
+        console.log("j")
+        break;
+        case 'k':var audio=new Audio("sounds/crash.mp3")
+        audio.play();
+        console.log("k")
+        break;
+        case 'l':var audio=new Audio("sounds/kick-bass.mp3")
+        audio.play();
+        console.log("l")
+        break;
+        default:
+            console.log(e.key)
+    }
 })
